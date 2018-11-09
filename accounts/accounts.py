@@ -6,9 +6,11 @@ def show_balances():
 	print('\n\n')
 	for key in accounts:
 		if type(accounts[key].balance) in [int, float]:
-			print(str(accounts[key].acct_id) + ' - ' + accounts[key].name + ': $' + str(accounts[key].balance))
+			#print(str(accounts[key].acct_id) + ' - ' + accounts[key].name + ': $' + str(accounts[key].balance))
+			print(f'{accounts[key].acct_id} - {accounts[key].name}: ${accounts[key].balance}')
 		else:
-			print(str(accounts[key].acct_id) + ' - ' + accounts[key].name + ': [' + str(accounts[key].balance) + ']')
+			#print(str(accounts[key].acct_id) + ' - ' + accounts[key].name + ': [' + str(accounts[key].balance) + ']')
+			print(f'{accounts[key].acct_id} - {accounts[key].name}: [{accounts[key].balance}]')
 	print('\n\n')
 
 class Account:
@@ -16,6 +18,12 @@ class Account:
 
 	def __init__(self, name, acct_id, duplicate=False):
 		global accounts
+
+		if acct_id in accounts:
+			raise Exception('Account ID is duplicate')
+		elif acct_id < 10000:
+			raise Exception('Account ID is too short')
+
 		self.name = name
 		self.acct_id = acct_id
 		self.txn_history = [['txn_num', 'type', 'amount', 'ending balance'], 'OPEN']
@@ -189,3 +197,7 @@ _10001.deposit(100, duplicate=True)
 _10001.deposit(100, duplicate=True)
 _10001.deposit(100, duplicate=True)
 _10001.deposit(100, duplicate=True)
+_10007 = Account('Hart, Chelsea Esme', 10007, duplicate=True)
+_10007.close(duplicate=True)
+_10007.reopen(duplicate=True)
+_10007.deposit(100, duplicate=True)
