@@ -15,6 +15,23 @@ def map(fn, l):
 	"""
 	return [fn(i) for i in l]
 
+def filtered_map(fn, pred, l):
+	"""Returns a list with fn mapped to each element of l that satisfies
+	pred; if pred not satisfied, original value inserted intstead
+
+	>>> square = lambda x: x**2
+	>>> is_odd = lambda x: x % 2 == 1
+	>>> filtered_map(square, is_odd, [1, 2, 3, 4])
+	[1, 2, 9, 4]
+	"""
+	result = []
+	for i in l:
+		if pred(i):
+			result += [fn(i)]
+		else:
+			result += [i]
+	return result
+
 
 
 
