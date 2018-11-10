@@ -39,7 +39,7 @@ class Sudoku:
 
 	def check_puzzle(self):
 		"""
-		>>> s = Sudoku(file = 'puzzle_1.txt')
+		>>> s = Sudoku(file = 'filled_puzzle_1.txt')
 		>>> s.check_puzzle()
 		Congratulations! Your answers check out!
 		"""
