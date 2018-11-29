@@ -24,6 +24,7 @@ class Sudoku:
 		  File "<stdin>", line 1, in <module>
 		Exception: You need an equal number of rows and columns!
 		"""
+		self.completed = False
 		if len(file) == 0:
 			self.rows = rows
 		elif len(rows) == 0 and len(file) != 0:
@@ -88,11 +89,15 @@ class Sudoku:
 					print('Sorry, but your answers do not work.')
 		if sum(collection) == 162:
 			print('Congratulations! Your answers check out!')
+			self.completed = True
 		else:
 			print('Sorry, but your answers do not work.')
 
 	def is_done(self):
 		return '_' not in self
+
+	def fill_spot(self, row, col, guess):
+		self.rows[row][col] = guess
 
 
 # open unfilled puzzle

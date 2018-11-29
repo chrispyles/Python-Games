@@ -18,6 +18,11 @@ class Board:
 	6. EDISON LABS: 200, 400, 600, 800, 1000
 	<BLANKLINE>
 	<BLANKLINE>
+	>>> b.is_done()
+	False
+	>>> b.questions.qs = {c:{}}
+	>>> b.is_done()
+	True
 	"""
 	def __init__(self, cats=[], qs=[], dj=False):
 		self.categories = cats
@@ -55,6 +60,30 @@ class Board:
 		else:
 			del self.questions.qs[cat][val]
 			return False
+
+	def is_done(self):
+		qs_left = [len(self.questions.qs[cat]) for cat in self.questions.qs]
+		if sum(qs_left) == 0:
+			return True
+		return False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     import doctest

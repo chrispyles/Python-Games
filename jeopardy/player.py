@@ -43,10 +43,11 @@ class Player:
 			answer = input()
 			if self.board.questions.answer(cat, val, answer):
 				self.score += val
-				print(f'\n\nCorrect!\n\nCurrent Score: ${self.score}')
+				print(f'\n\nCorrect!\n\nCurrent Score: {self.score}')
 			else:
 				self.score -= val
-				print('\n\nSorry, incorrect...\n\n')
+				print(f'\n\nSorry, incorrect...\n\nCurrent Score: {self.score}\n\n')
+				print(f'Correct Answer: {self.board.questions.answers[cat][val]}')
 
 		else:
 			print('\n\n')

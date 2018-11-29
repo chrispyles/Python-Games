@@ -5,8 +5,13 @@ from questions import *
 print('Please enter the game number.')
 game_num = input()
 
-print('\n\nPlease enter your name.')
-name = input()
+print('\n\nHow many players?')
+players = int(input())
+
+names = []
+for i in range(players):
+	print(f"\n\nPlease enter Player {i+1}'s name.")
+	names += [input()]
 
 cats = 'categories_' + game_num + '.txt'
 qs = 'qs_' + game_num + '.txt'
@@ -17,7 +22,7 @@ q = Questions(qs, ans, c)
 b = Board(c, q)
 p = Player(name, b)
 
-for _ in range(30):
+while not b.is_done():
 	p.choose_question()
 
 print(f'Your end score is ${p.score}')
