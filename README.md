@@ -8,10 +8,10 @@ The other folders in this repo are the experiments I mentioned above or unfinish
 
 ## How to Play
 
-0. Ensure that you have Python installed on your computer.
+Ensure that you have Python installed on your computer. Fork this repo and then `cd` into your local copy in the terminal. For example:
 
-1. Fork this repo and then `cd` into your local copy in the terminal. For example:
 ```cd ~\GitHub\Python-Games\jeopardy```
 
-2. Once in the directory of the game, run this (you should replace `python` with `python3` if that's what you have installed):
+Once in the directory of the game, run this (you should replace `python` with `python3` if that's what you have installed):
+
 ```python play.py```
