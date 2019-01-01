@@ -1,4 +1,21 @@
 # Python Projects
-This repo contains some projects that I've been working on of late. These include interactive windows with the tkinter library and object-oriented programming. Some of the projects are:
-* accounts - bank account program that uses tkinter to edit accounts
-* login - tkinter log in program
+
+This repository contains some games that I've been working on writing in Python that are meant to be played in the terminal, as well as some other Python experiments of mine. The games that I've finished so far are:
+* Jeopardy
+* Wheel of Fortune
+
+The other folders in this repo are the experiments I mentioned above or unfinished games.
+
+## How to Play
+
+Ensure that you have Python installed on your computer. Fork this repo and then `cd` into your local copy in the terminal. For example:
+
+```bash
+cd ~\GitHub\Python-Games\jeopardy
+```
+
+Once in the directory of the game, run this (you should replace `python` with `python3` if that's what you have installed):
+
+```bash
+python play.py
+```
