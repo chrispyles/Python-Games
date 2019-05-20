@@ -25,7 +25,6 @@ class Board:
 	def guess(self, player, letter):
 		if not player.guess(self._secret, letter):
 			self._board += 1
-			print("\n\n{}".format(self.board()))
 			
 	def board(self):
 		return boards[self._board]
