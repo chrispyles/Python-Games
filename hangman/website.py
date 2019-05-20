@@ -3,4 +3,4 @@
 from game import *
 from browser import document
 
-document <= Game()
+document["output"] <= Game()
