@@ -3,6 +3,7 @@
 This repository contains some games that I've been working on writing in Python that are meant to be played in the terminal, as well as some other Python experiments of mine. The games that I've finished so far are:
 * Jeopardy
 * Wheel of Fortune
+* Hangman
 
 The other folders in this repo are the experiments I mentioned above or unfinished games.
 

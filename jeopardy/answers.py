@@ -1,5 +1,5 @@
 from questions import *
-from categories imort *
+from categories import *
 
 class Answer:
 	"""
