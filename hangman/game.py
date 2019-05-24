@@ -52,7 +52,7 @@ class Game:
 	def run_game(self):
 		i = 0
 		while not self._board.is_completed():
-			print("Here is the current state of the board:")
+			print("\n\nHere is the current state of the board:")
 			print(self._board.board())
 
 			print("\nIt is {}'s turn.".format(self._players[i]._name))

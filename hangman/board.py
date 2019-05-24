@@ -3,6 +3,8 @@
 ##### by Chris Pyles #####
 ##########################
 
+# WHICH LETTERS HAVE BEEN GUESSED????????????????
+
 from secret import *
 from player import *
 from utils import *
@@ -15,6 +17,7 @@ class Board:
 		self._secret = secret
 		self._players = players
 		self._board = 0
+		self._guessed_letters = []
 
 	def __repr__(self):
 		return "<Board: {} length secret, {} guessed>".format(
@@ -23,11 +26,19 @@ class Board:
 			)
 
 	def guess(self, player, letter):
-		if not player.guess(self._secret, letter):
-			self._board += 1
+		if letter not in self._guessed_letters:
+			self._guessed_letters += [letter]
+			if not player.guess(self._secret, letter):
+				self._board += 1
+		else:
+			self._guessed_letters += [letter]
+			print("'{}' has already been guessed".format(letter))
 			
 	def board(self):
-		return boards[self._board]
+		bd = boards[self._board] + "\nWord: "
+		bd += (self._secret.__repr__() + "\nGuessed: ")
+		bd += " ".join(self._guessed_letters)
+		return bd
 
 	def board_number(self):
 		return self._board
