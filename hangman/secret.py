@@ -47,34 +47,3 @@ class SecretWord:
 
 	def is_finished(self):
 		return self.num_guessed() == len(self)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-if __name__ == "__main__":
-	import doctest
-	doctest.testmod()

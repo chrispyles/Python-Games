@@ -3,8 +3,6 @@
 ##### by Chris Pyles #####
 ##########################
 
-# WHICH LETTERS HAVE BEEN GUESSED????????????????
-
 from secret import *
 from player import *
 from utils import *
@@ -59,28 +57,3 @@ class Board:
 					p._id,
 					p._score
 				))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-if __name__ == "__main__":
-	import doctest
-	doctest.testmod()
